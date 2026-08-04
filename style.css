@@ -1,0 +1,669 @@
+/* =========================
+   一、全局基础样式
+   ========================= */
+
+/* 设置所有元素的盒子计算方式 */
+* {
+    box-sizing: border-box; /* 宽度和高度包含内边距和边框 */
+}
+
+/* 设置整个网页 */
+html {
+    scroll-behavior: smooth; /* 点击导航链接时平滑滚动 */
+}
+
+/* 设置网页主体 */
+body {
+    margin: 0; /* 清除浏览器默认外边距 */
+    padding: 0; /* 清除浏览器默认内边距 */
+    background-color: #f2f7fc; /* 设置网页浅灰蓝背景 */
+    color: #334155; /* 设置网页默认文字颜色 */
+    font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif; /* 设置网页字体 */
+    font-size: 16px; /* 设置默认文字大小 */
+    line-height: 1.8; /* 设置文字行高 */
+}
+
+
+/* =========================
+   二、网站头部样式
+   ========================= */
+
+/* 设置网站头部 */
+header {
+    padding: 50px 20px 30px; /* 设置头部上、左右、下内边距 */
+    background: linear-gradient(135deg, #2563eb, #38bdf8); /* 设置蓝色渐变背景 */
+    color: white; /* 设置头部文字颜色 */
+    text-align: center; /* 让头部文字水平居中 */
+}
+
+/* 设置网站主标题 */
+#para1 {
+    margin: 0 0 12px; /* 设置标题下方间距 */
+    color: white; /* 设置标题为白色 */
+    font-size: 42px; /* 设置标题字号 */
+    font-weight: bold; /* 设置标题加粗 */
+    letter-spacing: 4px; /* 设置文字之间的距离 */
+}
+
+/* 设置欢迎语 */
+.center {
+    margin: 0 0 30px; /* 设置欢迎语下方间距 */
+    text-align: center; /* 设置文字居中 */
+    font-size: 18px; /* 设置欢迎语字号 */
+    color: #e0f2fe; /* 设置欢迎语浅蓝白色 */
+}
+
+
+/* =========================
+   三、导航栏样式
+   ========================= */
+
+/* 设置导航栏 */
+.navbar {
+    display: flex; /* 开启Flex布局 */
+    justify-content: center; /* 导航链接水平居中 */
+    align-items: center; /* 导航链接垂直居中 */
+    gap: 15px; /* 设置导航链接之间的距离 */
+    flex-wrap: wrap; /* 屏幕较小时允许换行 */
+}
+
+/* 设置导航栏中的链接 */
+.navbar a {
+    display: inline-block; /* 让链接可以设置宽高和内边距 */
+    padding: 10px 22px; /* 设置导航链接内边距 */
+    color: white; /* 设置链接文字颜色 */
+    background-color: rgba(255, 255, 255, 0.14); /* 设置半透明背景 */
+    border: 1px solid rgba(255, 255, 255, 0.35); /* 设置浅色边框 */
+    border-radius: 25px; /* 设置胶囊形圆角 */
+    text-decoration: none; /* 去掉链接下划线 */
+    font-size: 16px; /* 设置链接字号 */
+    font-weight: bold; /* 设置链接文字加粗 */
+    transition: all 0.3s ease; /* 设置鼠标悬停过渡效果 */
+}
+
+/* 设置导航链接鼠标悬停效果 */
+.navbar a:hover {
+    color: #2563eb; /* 鼠标经过时文字变蓝 */
+    background-color: white; /* 鼠标经过时背景变白 */
+    transform: translateY(-3px); /* 鼠标经过时链接向上移动 */
+    box-shadow: 0 6px 15px rgba(15, 23, 42, 0.2); /* 添加阴影 */
+}
+
+
+/* =========================
+   四、分隔线样式
+   ========================= */
+
+/* 设置分隔线 */
+hr {
+    width: 90%; /* 设置分隔线宽度 */
+    max-width: 1100px; /* 设置分隔线最大宽度 */
+    height: 1px; /* 设置分隔线高度 */
+    margin: 0 auto; /* 让分隔线水平居中 */
+    border: none; /* 去掉默认边框 */
+    background-color: #dbeafe; /* 设置分隔线浅蓝色 */
+}
+
+
+/* =========================
+   五、所有内容区域样式
+   ========================= */
+
+/* 设置所有section区域 */
+section {
+    width: 90%; /* 设置区域宽度 */
+    max-width: 1100px; /* 设置区域最大宽度 */
+    margin: 0 auto; /* 让区域水平居中 */
+    padding: 60px 20px; /* 设置区域上下和左右内边距 */
+}
+
+/* 设置各个区域标题 */
+.section-title {
+    position: relative; /* 为标题装饰线提供定位参考 */
+    margin: 0 0 35px; /* 设置标题下方间距 */
+    color: #1d4ed8; /* 设置标题蓝色 */
+    text-align: center; /* 设置标题居中 */
+    font-size: 30px; /* 设置标题字号 */
+    font-weight: bold; /* 设置标题加粗 */
+    letter-spacing: 2px; /* 设置标题文字间距 */
+}
+
+/* 在标题下方添加短横线 */
+.section-title::after {
+    content: ""; /* 创建一个空的装饰元素 */
+    display: block; /* 设置为块级元素 */
+    width: 55px; /* 设置装饰线宽度 */
+    height: 4px; /* 设置装饰线高度 */
+    margin: 12px auto 0; /* 设置装饰线与标题的距离并居中 */
+    background-color: #38bdf8; /* 设置装饰线颜色 */
+    border-radius: 10px; /* 设置装饰线圆角 */
+}
+
+
+/* =========================
+   六、通用内容卡片样式
+   ========================= */
+
+/* 设置内容容器 */
+.content-box {
+    padding: 35px; /* 设置内容卡片内边距 */
+    background-color: white; /* 设置内容卡片背景为白色 */
+    border: 1px solid #dbeafe; /* 设置浅蓝色边框 */
+    border-radius: 14px; /* 设置卡片圆角 */
+    box-shadow: 0 8px 25px rgba(30, 64, 175, 0.08); /* 设置卡片阴影 */
+}
+
+/* 设置内容卡片中的段落 */
+.content-box p {
+    margin: 0 0 18px; /* 设置段落下方间距 */
+    color: #475569; /* 设置段落文字颜色 */
+    font-size: 16px; /* 设置段落字号 */
+}
+
+/* 设置最后一个段落 */
+.content-box p:last-child {
+    margin-bottom: 0; /* 去掉最后一个段落下方间距 */
+}
+
+
+/* =========================
+   七、技能卡片区域样式
+   ========================= */
+
+/* 设置技能卡片父容器 */
+.skills-container {
+    display: flex; /* 开启Flex布局 */
+    justify-content: center; /* 技能卡片水平居中 */
+    align-items: stretch; /* 让技能卡片高度尽量一致 */
+    gap: 25px; /* 设置技能卡片之间的距离 */
+    flex-wrap: wrap; /* 屏幕较小时允许换行 */
+}
+
+/* 设置每张技能卡片 */
+.skill-card {
+    width: 230px; /* 设置技能卡片宽度 */
+    min-height: 190px; /* 设置技能卡片最小高度 */
+    padding: 30px 22px; /* 设置技能卡片内边距 */
+    background-color: white; /* 设置技能卡片背景为白色 */
+    border: 1px solid #dbeafe; /* 设置技能卡片边框 */
+    border-radius: 14px; /* 设置技能卡片圆角 */
+    text-align: center; /* 设置技能卡片文字居中 */
+    box-shadow: 0 8px 20px rgba(30, 64, 175, 0.08); /* 设置技能卡片阴影 */
+    transition: all 0.3s ease; /* 设置鼠标悬停过渡效果 */
+}
+
+/* 设置技能卡片鼠标悬停效果 */
+.skill-card:hover {
+    transform: translateY(-8px); /* 鼠标经过时卡片向上移动 */
+    border-color: #60a5fa; /* 鼠标经过时边框变亮 */
+    box-shadow: 0 15px 30px rgba(30, 64, 175, 0.16); /* 鼠标经过时加深阴影 */
+}
+
+/* 设置技能卡片标题 */
+.skill-card h3 {
+    margin: 0 0 15px; /* 设置技能标题下方间距 */
+    color: #2563eb; /* 设置技能标题颜色 */
+    font-size: 23px; /* 设置技能标题字号 */
+}
+
+/* 设置技能卡片说明文字 */
+.skill-card p {
+    margin: 0; /* 清除段落默认外边距 */
+    color: #64748b; /* 设置说明文字颜色 */
+    font-size: 15px; /* 设置说明文字字号 */
+    line-height: 1.7; /* 设置说明文字行高 */
+}
+
+
+/* =========================
+   八、作品区域样式
+   ========================= */
+
+/* 设置每一个作品文章 */
+#works article {
+    margin-bottom: 25px; /* 设置作品之间的距离 */
+    padding: 25px; /* 设置作品内容内边距 */
+    background-color: #f8fbff; /* 设置作品浅色背景 */
+    border-top: 5px solid #3b82f6; /* 设置作品上侧蓝色边框 */
+    border-radius: 10px; /* 设置作品圆角 */
+}
+
+/* 设置最后一个作品 */
+#works article:last-child {
+    margin-bottom: 0; /* 去掉最后一个作品下方间距 */
+}
+
+/* 设置作品标题 */
+#works article h3 {
+    margin: 0 0 12px; /* 设置作品标题下方间距 */
+    color: #1e40af; /* 设置作品标题颜色 */
+    font-size: 21px; /* 设置作品标题字号 */
+    text-align: center; /* 设置作品标题文字居中 */
+}
+
+/* 设置作品图片 */
+.work-image {
+    display: block; /* 将图片设置为块级元素 */
+    width: 100%; /* 图片宽度占满父容器 */
+    max-width: 400px; /* 设置图片最大宽度 */    
+    height: auto; /* 保持图片原始比例 */
+    margin: 20px auto 0;/* 设置图片顶部间距并左对齐 */
+    border: 5px solid white; /* 设置图片白色边框 */
+    border-radius: 12px; /* 设置图片圆角 */
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18); /* 设置图片阴影 */
+}
+
+
+/* =========================
+   九、联系方式区域样式
+   ========================= */
+
+/* 设置带padding类名的段落 */
+p.padding {
+    padding: 8px 15px; /* 设置段落内边距 */
+    background-color: #f8fbff; /* 设置浅蓝白背景 */
+    border-radius: 8px; /* 设置段落圆角 */
+    text-align: center;
+}
+
+/* 设置联系方式中的三级标题 */
+#contact h3 {
+    margin: 35px 0 20px; /* 设置留言标题上下间距 */
+    color: #1e40af; /* 设置留言标题颜色 */
+    font-size: 23px; /* 设置留言标题字号 */
+    text-align: center; /* 设置留言标题居中 */
+}
+
+
+/* =========================
+   十、表单样式
+   ========================= */
+
+/* 设置表单 */
+form {
+    max-width: 650px; /* 设置表单最大宽度 */
+    margin: 0 auto; /* 让表单水平居中 */
+    padding: 30px; /* 设置表单内边距 */
+    background-color: #f8fbff; /* 设置表单浅色背景 */
+    border: 1px solid #dbeafe; /* 设置表单边框 */
+    border-radius: 12px; /* 设置表单圆角 */
+}
+
+/* 设置表单标签 */
+label {
+    display: inline-block; /* 让标签可以设置间距 */
+    margin-bottom: 8px; /* 设置标签下方间距 */
+    color: #334155; /* 设置标签文字颜色 */
+    font-weight: bold; /* 设置标签文字加粗 */
+}
+
+/* 设置输入框和留言框 */
+input,
+textarea {
+    width: 100%; /* 输入框宽度占满父容器 */
+    margin-top: 8px; /* 设置输入框顶部间距 */
+    padding: 12px 14px; /* 设置输入框内边距 */
+    color: #334155; /* 设置输入文字颜色 */
+    background-color: white; /* 设置输入框背景 */
+    border: 1px solid #bfdbfe; /* 设置输入框边框 */
+    border-radius: 8px; /* 设置输入框圆角 */
+    font-family: inherit; /* 继承网页字体 */
+    font-size: 16px; /* 设置输入文字字号 */
+    outline: none; /* 去掉点击后的默认外框 */
+    transition: all 0.3s ease; /* 设置点击过渡效果 */
+}
+
+/* 设置留言框 */
+textarea {
+    min-height: 140px; /* 设置留言框最小高度 */
+    resize: vertical; /* 只允许上下调整留言框大小 */
+}
+
+/* 设置输入框获得焦点时的效果 */
+input:focus,
+textarea:focus {
+    border-color: #3b82f6; /* 点击时边框变蓝 */
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12); /* 添加浅蓝色外发光 */
+}
+
+/* 设置提交按钮所在段落 */
+form p:last-child {
+    margin: 25px 0 0; /* 设置按钮顶部间距 */
+    text-align: center; /* 设置按钮居中 */
+}
+
+/* 设置提交按钮 */
+button {
+    padding: 12px 32px; /* 设置按钮内边距 */
+    color: white; /* 设置按钮文字颜色 */
+    background-color: #2563eb; /* 设置按钮背景颜色 */
+    border: none; /* 去掉按钮默认边框 */
+    border-radius: 25px; /* 设置按钮胶囊形圆角 */
+    font-family: inherit; /* 继承网页字体 */
+    font-size: 16px; /* 设置按钮字号 */
+    font-weight: bold; /* 设置按钮文字加粗 */
+    cursor: pointer; /* 鼠标经过时显示手形 */
+    transition: all 0.3s ease; /* 设置鼠标悬停过渡效果 */
+}
+
+/* 设置按钮鼠标悬停效果 */
+button:hover {
+    background-color: #1d4ed8; /* 鼠标经过时背景变深蓝 */
+    transform: translateY(-2px); /* 鼠标经过时按钮向上移动 */
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.3); /* 添加按钮阴影 */
+}
+
+
+/* =========================
+   十一、页脚样式
+   ========================= */
+
+/* 设置网站页脚 */
+footer {
+    padding: 30px 20px; /* 设置页脚内边距 */
+    background-color: #0f172a; /* 设置页脚深蓝黑色背景 */
+    text-align: center; /* 设置页脚文字居中 */
+}
+
+/* 设置页脚中的文字 */
+footer .section-title {
+    margin: 0; /* 清除页脚文字默认外边距 */
+    color: #cbd5e1; /* 设置页脚文字颜色 */
+    font-size: 15px; /* 设置页脚文字字号 */
+    font-weight: normal; /* 取消页脚文字加粗 */
+    letter-spacing: 1px; /* 设置页脚文字间距 */
+}
+
+/* 点击问候按钮 */
+.hello-btn {
+
+
+    padding:12px 30px; /* 设置按钮大小 */
+
+
+    margin-top:10px; /* 设置按钮上方距离 */
+
+
+    margin-bottom:-5px; /* 减少按钮和导航栏距离 */
+
+
+    color:white; /* 设置文字颜色 */
+
+
+    background-color:#174bbb; /* 设置按钮背景颜色 */
+
+
+    border:none; /* 去掉按钮边框 */
+
+
+    border-radius:25px; /* 设置圆角 */
+
+
+    font-size:16px; /* 设置文字大小 */
+
+
+    cursor:pointer; /* 鼠标变手型 */
+
+
+    transform:translateY(-20px); /* 整个按钮向上移动20px */
+
+
+    transition:0.3s; /* 添加动画 */
+
+}
+
+/* 鼠标经过按钮 */
+.hello-btn:hover {
+
+    background-color:#2a4ebb; /* 改变按钮颜色 */
+
+    transform:translateY(-5px); /* 向上移动 */
+
+}
+
+/* 去掉页脚文字下方的装饰线 */
+footer .section-title::after {
+    display: none; /* 隐藏装饰线 */
+}
+
+
+/* =========================
+   暗黑模式按钮
+   ========================= */
+
+
+.dark-btn{
+
+
+    padding:12px 30px; /* 设置按钮大小 */
+
+
+    margin-left:15px; /* 和问候按钮保持距离 */
+
+
+    color:white; /* 设置文字颜色 */
+
+
+    background-color:#0f172a; /* 深色背景 */
+
+
+    border:none; /* 去掉边框 */
+
+
+    border-radius:25px; /* 设置圆角 */
+
+
+    font-size:16px; /* 设置字体大小 */
+
+
+    cursor:pointer; /* 鼠标变手型 */
+
+
+    transition:0.3s; /* 添加动画 */
+
+}
+
+
+
+.dark-btn:hover{
+
+
+    background-color:#334155; /* 鼠标经过颜色 */
+
+
+    transform:translateY(-3px); /* 向上移动 */
+
+
+}
+
+
+/* =========================
+   暗黑模式切换按钮
+   ========================= */
+
+.dark-mode-btn {
+    background-color: #222;       /* 设置按钮背景颜色 */
+    color: white;                 /* 设置按钮文字颜色 */
+    border: none;                 /* 删除按钮边框 */
+    padding: 10px 18px;           /* 设置按钮内部间距 */
+    margin: 10px;                 /* 设置按钮外部间距 */
+    border-radius: 6px;            /* 设置按钮圆角 */
+    font-size: 16px;              /* 设置按钮文字大小 */
+    cursor: pointer;              /* 鼠标经过时显示小手 */
+    transition: 0.3s;             /* 设置颜色变化动画 */
+}
+
+.dark-mode-btn:hover {
+    background-color: #555;       /* 鼠标经过时改变背景颜色 */
+}
+
+
+/* 给整个网页添加颜色切换动画 */
+body {
+    transition: 0.3s;             /* 设置背景和文字颜色的渐变效果 */
+}
+
+
+/* 网页开启暗黑模式后的样式 */
+body.dark-mode {
+    background-color: #121212;    /* 设置网页深色背景 */
+    color: #f1f1f1;               /* 设置网页浅色文字 */
+}
+
+
+/* 暗黑模式下的导航栏 */
+.dark-mode .navbar {
+    background-color: transparent; /* 导航栏背景改为透明 */
+}
+
+
+/* 暗黑模式下的内容区域 */
+.dark-mode .content-box {
+    background-color: #242424;    /* 设置内容区域深灰色背景 */
+    color: #f1f1f1;               /* 设置内容区域浅色文字 */
+}
+
+
+/* 暗黑模式下的技能卡片 */
+.dark-mode .skill-card {
+    background-color: #242424;    /* 设置技能卡片深灰色背景 */
+    color: #f1f1f1;               /* 设置技能卡片浅色文字 */
+}
+
+
+/* 暗黑模式下的标题 */
+.dark-mode .section-title {
+    color: #80bfff;               /* 设置标题为浅蓝色 */
+}
+
+
+/* 暗黑模式下的分隔线 */
+.dark-mode hr {
+    background-color: #777777;    /* 设置分隔线颜色 */
+}
+
+
+/* 暗黑模式下的输入框 */
+.dark-mode input,
+.dark-mode textarea {
+    background-color: #333333;    /* 设置输入框深色背景 */
+    color: #ffffff;               /* 设置输入文字颜色 */
+    border: 1px solid #777777;     /* 设置输入框边框 */
+}
+
+
+/* 暗黑模式下输入框的提示文字 */
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+    color: #bbbbbb;               /* 设置提示文字颜色 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   十二、手机端适配
+   ========================= */
+
+/* 当屏幕宽度小于或等于768px时生效 */
+@media screen and (max-width: 768px) {
+
+    /* 调整网站头部 */
+    header {
+        padding: 40px 15px 25px; /* 减少手机端头部内边距 */
+    }
+
+    /* 调整网站主标题 */
+    #para1 {
+        font-size: 32px; /* 减小手机端标题字号 */
+        letter-spacing: 2px; /* 减小手机端文字间距 */
+    }
+
+    /* 调整欢迎语 */
+    .center {
+        font-size: 16px; /* 减小手机端欢迎语字号 */
+    }
+
+    /* 调整导航栏 */
+    .navbar {
+        gap: 10px; /* 减小手机端导航链接间距 */
+    }
+
+    /* 调整导航链接 */
+    .navbar a {
+        padding: 9px 16px; /* 减小手机端导航链接内边距 */
+        font-size: 14px; /* 减小手机端导航字号 */
+    }
+
+    /* 调整内容区域 */
+    section {
+        width: 94%; /* 增加手机端内容可用宽度 */
+        padding: 45px 10px; /* 减少手机端区域内边距 */
+    }
+
+    /* 调整区域标题 */
+    .section-title {
+        font-size: 26px; /* 减小手机端区域标题字号 */
+    }
+
+    /* 调整内容卡片 */
+    .content-box {
+        padding: 22px; /* 减少手机端卡片内边距 */
+    }
+
+    /* 调整技能卡片 */
+    .skill-card {
+        width: 100%; /* 手机端技能卡片占满一行 */
+        max-width: 400px; /* 设置技能卡片最大宽度 */
+    }
+
+    /* 调整表单 */
+    form {
+        padding: 20px; /* 减少手机端表单内边距 */
+    }
+}
+
+
+/* 当屏幕宽度小于或等于480px时生效 */
+@media screen and (max-width: 480px) {
+
+    /* 调整主标题 */
+    #para1 {
+        font-size: 27px; /* 进一步减小标题字号 */
+    }
+
+    /* 调整导航链接 */
+    .navbar a {
+        width: 46%; /* 每行显示两个导航链接 */
+        text-align: center; /* 让导航文字居中 */
+    }
+
+    /* 调整内容区域 */
+    section {
+        padding: 38px 5px; /* 进一步减小区域左右间距 */
+    }
+
+    /* 调整内容卡片 */
+    .content-box {
+        padding: 18px; /* 进一步减少卡片内边距 */
+    }
+
+    /* 调整作品文章 */
+    #works article {
+        padding: 18px; /* 减少作品卡片内边距 */
+    }
+}

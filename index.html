@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+    <!-- 设置网页字符编码 -->
+    <meta charset="UTF-8">
+
+    <!-- 设置手机、平板和电脑自适应 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 引入外部CSS文件 -->
+    <link rel="stylesheet" href="/mywed/style.css">
+
+    <!-- 浏览器标签页标题 -->
+    <title>我的个人网站</title>
+
+
+    <!-- =========================
+         暗黑模式和按钮样式
+         ========================= -->
+
+    <style>
+
+        /* 给网页颜色变化添加过渡动画 */
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+
+        /* 两个按钮的外层容器 */
+        .top-button-container {
+            display: flex;                 /* 开启Flex布局 */
+            justify-content: center;       /* 两个按钮水平居中 */
+            align-items: center;           /* 两个按钮垂直对齐 */
+            gap: 15px;                     /* 设置两个按钮之间的距离 */
+            margin: 20px 0;                /* 设置按钮区域上下外边距 */
+        }
+
+
+        /* 统一两个按钮的大小 */
+        .top-button-container button {
+            height: 46px;                  /* 设置两个按钮相同高度 */
+            padding: 0 22px;               /* 设置按钮左右内边距 */
+            margin: 0;                     /* 清除按钮原来的外边距 */
+            border: none;                  /* 删除按钮边框 */
+            border-radius: 8px;            /* 设置按钮圆角 */
+            color: white;                  /* 设置按钮文字颜色 */
+            font-size: 16px;               /* 设置按钮文字大小 */
+            font-weight: bold;             /* 设置按钮文字加粗 */
+            cursor: pointer;               /* 鼠标经过时显示小手 */
+            transition: 0.3s;              /* 设置按钮颜色变化动画 */
+        }
+
+
+        /* 点击这里按钮 */
+        .hello-btn {
+            background-color: #1455c7;     /* 设置蓝色背景 */
+        }
+
+
+        /* 鼠标经过点击这里按钮 */
+        .hello-btn:hover {
+            background-color: #0c3f9d;     /* 背景颜色变成深蓝色 */
+        }
+
+
+        /* 暗黑模式切换按钮 */
+        .dark-mode-btn {
+            background-color: #222222;     /* 设置深色背景 */
+        }
+
+
+        /* 鼠标经过暗黑模式按钮 */
+        .dark-mode-btn:hover {
+            background-color: #444444;     /* 背景颜色变成灰色 */
+        }
+
+
+        /* 暗黑模式下的整个网页 */
+        body.dark-mode {
+            background-color: #121212;    /* 设置网页深色背景 */
+            color: #f1f1f1;               /* 设置网页浅色文字 */
+        }
+
+
+        /* 暗黑模式下的整个顶部区域 */
+        .dark-mode header {
+            background: #121212;           /* 将蓝色头部区域变成黑色 */
+            color: #ffffff;                /* 设置头部文字为白色 */
+        }
+
+
+        /* 暗黑模式下的网站主标题 */
+        .dark-mode #para1 {
+            color: #ffffff;                /* 设置主标题为白色 */
+        }
+
+
+        /* 暗黑模式下的欢迎语 */
+        .dark-mode #welcome {
+            color: #ffffff;                /* 设置欢迎语为白色 */
+        }
+
+
+        /* 普通模式下的导航栏 */
+        .navbar {
+            background-color: transparent; /* 删除导航栏整条背景 */
+        }
+
+
+        /* 暗黑模式下的导航栏 */
+        .dark-mode .navbar {
+            background-color: transparent; /* 导航栏保持透明 */
+        }
+
+
+        /* 暗黑模式下的内容区域 */
+        .dark-mode .content-box {
+            background-color: #242424;     /* 设置内容区域深灰色背景 */
+            color: #f1f1f1;                /* 设置内容文字颜色 */
+        }
+
+
+        /* 暗黑模式下的技能卡片 */
+        .dark-mode .skill-card {
+            background-color: #242424;     /* 设置技能卡片深灰色背景 */
+            color: #f1f1f1;                /* 设置技能卡片文字颜色 */
+        }
+
+
+        /* 暗黑模式下的区域标题 */
+        .dark-mode .section-title {
+            color: #80bfff;                /* 设置标题为浅蓝色 */
+        }
+
+
+        /* 暗黑模式下的三级标题 */
+        .dark-mode h3 {
+            color: #f1f1f1;                /* 设置三级标题为浅色 */
+        }
+
+
+        /* 暗黑模式下的分隔线 */
+        .dark-mode hr {
+            background-color: #777777;     /* 设置分隔线颜色 */
+        }
+
+
+        /* 暗黑模式下的输入框和留言框 */
+        .dark-mode input,
+        .dark-mode textarea {
+            background-color: #333333;     /* 设置输入区域深色背景 */
+            color: #ffffff;                /* 设置输入文字为白色 */
+            border: 1px solid #777777;     /* 设置灰色边框 */
+        }
+
+
+        /* 暗黑模式下的提示文字 */
+        .dark-mode input::placeholder,
+        .dark-mode textarea::placeholder {
+            color: #bbbbbb;                /* 设置提示文字为浅灰色 */
+        }
+
+
+        /* 手机屏幕样式 */
+        @media screen and (max-width: 480px) {
+
+            /* 手机端按钮容器 */
+            .top-button-container {
+                gap: 10px;                 /* 缩小两个按钮之间的距离 */
+                padding: 0 10px;            /* 设置左右内边距 */
+            }
+
+
+            /* 手机端按钮样式 */
+            .top-button-container button {
+                padding: 0 15px;            /* 缩小按钮左右内边距 */
+                font-size: 14px;             /* 缩小按钮文字 */
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     网站头部
+     ========================= -->
+
+<header>
+
+
+    <!-- 网站标题 -->
+    <h1 id="para1">
+        我的个人网站
+    </h1>
+
+
+    <!-- 网站欢迎语 -->
+    <!-- 添加id，方便JavaScript修改文字 -->
+    <p class="center" id="welcome">
+        你好，欢迎来到我的个人主页！
+    </p>
+
+
+    <!-- 两个按钮的外层容器 -->
+    <div class="top-button-container">
+
+
+       
+
+
+        <!-- 暗黑模式切换按钮 -->
+        <!-- 点击后执行changeDarkMode函数 -->
+        <button
+            class="dark-mode-btn"
+            id="darkModeBtn"
+            type="button"
+            onclick="changeDarkMode()">
+
+            🌙 切换暗黑模式
+
+        </button>
+
+
+    </div>
+
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+
+
+        <!-- 跳转到关于我区域 -->
+        <a href="#about">
+            关于我
+        </a>
+
+
+        <!-- 跳转到技能区域 -->
+        <a href="#skills">
+            技能
+        </a>
+
+
+        <!-- 跳转到作品区域 -->
+        <a href="#works">
+            作品
+        </a>
+
+
+        <!-- 跳转到联系方式区域 -->
+        <a href="#contact">
+            联系方式
+        </a>
+
+
+    </nav>
+
+
+</header>
+
+
+<hr>
+
+
+<!-- =========================
+     关于我
+     ========================= -->
+
+<section id="about">
+
+
+    <!-- 关于我标题 -->
+    <h2 class="section-title">
+        关于我
+    </h2>
+
+
+    <!-- 关于我内容 -->
+    <div class="content-box">
+
+
+        <p>
+            你好，我是一名正在学习网页制作的学生。
+            我对HTML、CSS和网页设计很感兴趣，
+            希望通过不断练习，
+            做出属于自己的个人网站和作品展示页面。
+        </p>
+
+
+        <p>
+            这个网站主要用来介绍我自己，
+            展示我学习过的技能，
+            以及整理我完成过的一些网页作品。
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+<hr>
+
+
+<!-- =========================
+     技能区域
+     ========================= -->
+
+<section id="skills">
+
+
+    <!-- 技能区域标题 -->
+    <h2 class="section-title">
+        我的技能
+    </h2>
+
+
+    <!-- 技能卡片外层容器 -->
+    <div class="skills-container">
+
+
+        <!-- HTML技能卡片 -->
+        <div class="skill-card">
+
+            <h3>
+                HTML
+            </h3>
+
+            <p>
+                能够使用HTML搭建网页基本结构。
+            </p>
+
+        </div>
+
+
+        <!-- CSS技能卡片 -->
+        <div class="skill-card">
+
+            <h3>
+                CSS
+            </h3>
+
+            <p>
+                正在学习使用CSS设置颜色、
+                字体、间距和页面布局。
+            </p>
+
+        </div>
+
+
+        <!-- JavaScript技能卡片 -->
+        <div class="skill-card">
+
+            <h3>
+                JavaScript
+            </h3>
+
+            <p>
+                正在学习制作网页交互效果。
+            </p>
+
+        </div>
+
+
+        <!-- 网页布局技能卡片 -->
+        <div class="skill-card">
+
+            <h3>
+                网页布局
+            </h3>
+
+            <p>
+                了解导航栏、内容区、
+                作品区和页脚结构。
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<hr>
+
+
+<!-- =========================
+     作品区域
+     ========================= -->
+
+<section id="works">
+
+
+    <!-- 作品区域标题 -->
+    <h2 class="section-title">
+        我的作品
+    </h2>
+
+
+    <!-- 作品内容区域 -->
+    <div class="content-box">
+
+
+        <!-- 第一个作品 -->
+        <article>
+
+            <h3>
+                作品一：个人介绍页面
+            </h3>
+
+            <img 
+    src="./images/ppe.jpg"
+    class="work-image"
+    alt="个人介绍页面作品图片">
+
+        </article>
+
+
+        <!-- 第二个作品 -->
+        <article>
+
+            <h3>
+                作品二：电影推荐页面
+            </h3>
+
+            <img 
+    src="./images/wwe.jpg"
+    class="work-image"
+    alt="电影推荐页面作品图片">
+
+        </article>
+
+
+        <!-- 第三个作品 -->
+        <article>
+
+            <h3>
+                作品三：电影作品展示
+            </h3>
+
+            <img 
+    src="./images/op.jpg"
+    class="work-image"
+    alt="电影作品展示图片">
+
+        </article>
+
+
+    </div>
+
+
+</section>
+
+
+<hr>
+
+
+<!-- =========================
+     联系方式
+     ========================= -->
+
+<section id="contact">
+
+
+    <!-- 联系方式标题 -->
+    <h2 class="section-title">
+        联系方式
+    </h2>
+
+
+    <!-- 联系方式内容区域 -->
+    <div class="content-box">
+
+
+        <p class="padding">
+            邮箱：example@email.com
+        </p>
+
+
+        <p class="padding">
+            电话：123-4567-8900
+        </p>
+
+
+        <p class="padding">
+            地址：中国
+        </p>
+
+
+        <!-- 留言区域标题 -->
+        <h3>
+            给我留言
+        </h3>
+
+
+        <!-- 留言表单 -->
+        <form action="#" method="post">
+
+
+            <!-- 姓名输入区域 -->
+            <p class="padding">
+
+                <label for="name">
+                    姓名：
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="请输入你的姓名">
+
+            </p>
+
+
+            <!-- 邮箱输入区域 -->
+            <p class="padding">
+
+                <label for="email">
+                    邮箱：
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="请输入你的邮箱">
+
+            </p>
+
+
+            <!-- 留言内容输入区域 -->
+            <p class="padding">
+
+                <label for="message">
+                    留言内容：
+                </label>
+
+                <br>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    cols="30"
+                    placeholder="请输入留言内容"></textarea>
+
+            </p>
+
+
+            <!-- 提交留言按钮 -->
+            <p>
+
+                <button type="submit">
+                    提交留言
+                </button>
+
+            </p>
+
+
+        </form>
+
+
+    </div>
+
+
+</section>
+
+
+<hr>
+
+
+<!-- =========================
+     页脚
+     ========================= -->
+
+<footer>
+
+
+    <!-- 网站版权信息 -->
+    <p class="section-title">
+        © 2026 我的个人网站
+    </p>
+
+
+</footer>
+
+
+<!-- =========================
+     JavaScript代码
+     ========================= -->
+
+<script>
+
+
+    // 创建点击问候函数
+    function sayHello() {
+
+
+        // 获取欢迎语所在的位置
+        let welcomeText =
+            document.getElementById("welcome");
+
+
+        // 修改网页上的欢迎文字
+        welcomeText.innerHTML =
+            "你好！感谢访问我的个人网站，希望你喜欢我的作品！";
+
+
+        // 弹出欢迎提示窗口
+        alert("欢迎来到我的个人主页！");
+
+
+    }
+
+
+    // 创建暗黑模式切换函数
+    function changeDarkMode() {
+
+
+        // 给body添加或者删除dark-mode类
+        document.body.classList.toggle("dark-mode");
+
+
+        // 获取暗黑模式切换按钮
+        let darkModeButton =
+            document.getElementById("darkModeBtn");
+
+
+        // 判断网页是否已经进入暗黑模式
+        if (document.body.classList.contains("dark-mode")) {
+
+
+            // 暗黑模式开启后修改按钮文字
+            darkModeButton.innerHTML =
+                "☀️ 切换亮色模式";
+
+
+        } else {
+
+
+            // 亮色模式开启后恢复按钮文字
+            darkModeButton.innerHTML =
+                "🌙 切换暗黑模式";
+
+
+        }
+
+
+    }
+
+
+</script>
+
+
+
+</body>
+
+</html>
