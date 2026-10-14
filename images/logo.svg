@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="苏林个人网站图标">
+  <defs><linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#1d4ed8"/><stop offset="1" stop-color="#1389d5"/></linearGradient></defs>
+  <rect width="128" height="128" rx="28" fill="url(#blue)"/>
+  <text x="64" y="66" text-anchor="middle" dominant-baseline="central" fill="white" font-size="94" font-weight="700" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">苏</text>
+</svg>
